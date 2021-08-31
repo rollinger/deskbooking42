@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=deskbookingsystem42
+POSTGRES_USER=BQQyiBuILCAcsoDNdkvAXRamuInhGxcg
+POSTGRES_PASSWORD=e3YieS23P5VUVblNUxB4J9x7C1ZOBmzt6x19tczCHgIoMaC9oDLMVHOS9BjmkLDy
