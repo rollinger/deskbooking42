@@ -7,7 +7,14 @@ from django.utils.translation import gettext_lazy as _
 
 class Role(Model):
     """Default role for 42users."""
-    name = CharField(max_length=200, blank=True, default=False)
+    name = CharField(max_length=200, blank=True)
+
+    class Meta:
+        verbose_name = _("Role")
+        verbose_name_plural = _("Roles")
+
+    def __str__(self):
+        return _("Role: %s" % (self.name))
 
 class User(AbstractUser):
     """Default user for DeskBookingSystem42."""

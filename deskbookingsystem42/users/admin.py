@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
 from deskbookingsystem42.users.forms import UserChangeForm, UserCreationForm
+from .models import Role
 
 User = get_user_model()
 
@@ -30,5 +31,9 @@ class UserAdmin(auth_admin.UserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-    list_display = ["username", "name", "is_superuser"]
+    list_display = ["username", "name", "is_superuser", "role"]
     search_fields = ["name"]
+
+@admin.register(Role)
+class UserAdmin(admin.ModelAdmin):
+    pass
