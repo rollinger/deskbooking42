@@ -280,3 +280,6 @@ deskbookingsystem42/media/
 .env
 .envs/*
 !.envs/.local/
+
+# Database
+db.sqlite3
