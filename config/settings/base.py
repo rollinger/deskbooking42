@@ -80,6 +80,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "deskbookingsystem42.users.apps.UsersConfig",
+    "deskbookingsystem42.school.apps.SchoolConfig",
+    "deskbookingsystem42.booking.apps.BookingConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
