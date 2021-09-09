@@ -5,6 +5,8 @@ from django.db.models.deletion import SET_NULL
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
+from school.models import School
+
 class Role(Model):
     """Default role for 42users."""
     name = CharField(max_length=200, blank=True)
@@ -24,7 +26,7 @@ class User(AbstractUser):
     first_name = None  # type: ignore
     last_name = None  # type: ignore
     role = ForeignKey(Role, null=True, blank=True, on_delete=SET_NULL)
-    school = None #@Philipp  
+    school = ForeignKey(School, null=True, blank=True, on_delete=SET_NULL) 
 
     def get_absolute_url(self):
         """Get url for user's detail view.
