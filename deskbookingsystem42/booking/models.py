@@ -44,8 +44,6 @@ class Slot(models.Model):
             self.service.school.name
         )
 
-
-
 class Booking(models.Model):
     """ 
     Booking 
