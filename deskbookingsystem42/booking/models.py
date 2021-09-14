@@ -30,8 +30,9 @@ class Slot(models.Model):
     """ 
     Slot 
     """
-    service = ForeignKey(Service, on_delete=models.CASCADE)
-    name    = CharField(_("Name"),max_length=255)
+    service     = ForeignKey(Service, on_delete=models.CASCADE)
+    name        = CharField(_("Name"),max_length=255)
+    place_id    = CharField(_("Identification of Place"), max_length=255, blank=True)
 
     class Meta:
         verbose_name = _("Slot")
