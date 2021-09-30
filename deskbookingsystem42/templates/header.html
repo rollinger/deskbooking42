@@ -1,5 +1,4 @@
 {% load static i18n%}
-<div class="mb-1">
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
@@ -23,9 +22,8 @@
         <button type="button" class="btn" data-toggle="modal" data-target="#signinModel">
           <i class="fas fa-user"></i>
         </button>
-        {% include "signup-modals.html" %}
+        {% include "signup-modals.html" with LoginForm=LoginForm  SignupForm=SignupForm%}
         {% endif %}
       </li>
     </ul>
   </nav>
-</div>

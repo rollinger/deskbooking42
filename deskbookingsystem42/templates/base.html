@@ -53,7 +53,7 @@
 
     
     <div class="container-fluid">
-      {% include "header.html"  %}
+      {% include "header.html"  with LoginForm=LoginForm  SignupForm=SignupForm %}
       {% if messages %}
       {% for message in messages %}
       <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
@@ -62,10 +62,11 @@
 
       <div class="d-flex flex-row">
         {% include "navbar.html" %}
-
+        <div class="main-container">
           {% block content %}
-            <p>Use this document as a way to quick start any new project.</p>
-          {% endblock content %}
+             <p>Use this document as a way to quick start any new project.</p>
+           {% endblock content %}
+        </div>
 
       </div>
 

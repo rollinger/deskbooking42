@@ -1,3 +1,14 @@
-body {
-	background-color: black;
+html, body {
+	height: 100%;
+}
+
+.container-fluid {
+	height: 100%;
+}
+.side-navbar {
+	flex: 0.1;
+}
+.main-container {
+	padding: 5px;
+	flex: 100%;
 }

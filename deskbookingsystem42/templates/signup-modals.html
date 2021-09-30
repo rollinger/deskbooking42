@@ -1,3 +1,37 @@
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+<div class="modal show in" id="signinModel" tabindex="-1" role="dialog" aria-labelledby="signinModelLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signinModelLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="login-form">
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                      {% csrf_token %}
+                      {{ LoginForm|crispy }}
+                      {% if redirect_field_value %}
+                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                      {% endif %}
+                      <button class="btn btn-primary btn-block btn-medium mb-3" type="submit">{% trans "Login" %}</button>
+                      <a class="btn btn-primary btn-block btn-medium" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                    </form>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="modal show in" id="signinModel" tabindex="-1" role="dialog" aria-labelledby="signinModelLabel"
     aria-hidden="true">
@@ -10,7 +44,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                logn form
+                <div id="signup-form">
+                    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                      {% csrf_token %}
+                      {{ SignupForm|crispy }}
+                      {% if redirect_field_value %}
+                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                      {% endif %}
+                      <button class='btn btn-primary btn-block btn-medium mb-3' type="submit">{% trans "CREATE NEW ACCOUNT" %}</button>
+                    </form>
+                  </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
